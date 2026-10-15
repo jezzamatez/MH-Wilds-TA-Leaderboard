@@ -3,14 +3,17 @@
     "retrievedAtUtc":  "2026-10-14T22:52:28.4169940Z",
     "scriptProjectId":  "1I8OOMVV2VU6cjnzpKJDL8Vw_Qfrc6ZmdObdochBAIy-TwQXVekigbL4L",
     "websiteDeploymentId":  "AKfycbws8Ia_eSpxe7KsAhGF6wmRSkkM6vqy2oy8JYiyfAOx-MMqLgZ6miybhILnXmUiHlrDVQ",
-    "importedFromCompanionCommit":  "752cc2ae6e9097a5de50bd25ef0663f2119a1658",
+    "historicalImport":  {
+        "sourceCommit":  "752cc2ae6e9097a5de50bd25ef0663f2119a1658",
+        "sourceRepositoryRetained":  false
+    },
     "editorHead":  {
                        "kind":  "editor-head-at-retrieval"
                    },
     "deployedVersion3":  {
                              "versionNumber":  3
                          },
-    "privateEvidence":  "Original snapshots retained outside this repository in the temporary migration backup.",
+    "privateEvidence":  "Original raw intake and temporary backup were deliberately deleted after source-preservation checks; no raw snapshot location is retained.",
     "workingCopy":  {
                         "sourceDirectory":  "src",
                         "initialBaseline":  "editorHead",

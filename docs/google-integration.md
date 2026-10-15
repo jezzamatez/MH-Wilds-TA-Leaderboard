@@ -1,8 +1,11 @@
 # Google resources and verified relationships
 
 These findings describe the read-only retrieval at
-`2026-10-14T22:52:28.4169940Z`. Raw source/API snapshots stay in the private
-temporary companion backup, not this public-source repository.
+`2026-10-14T22:52:28.4169940Z`. The temporary import workspace, raw intake and
+its backup were deliberately deleted after source-preservation checks. This
+repository retains source, identifiers, hashes and documented findings, not the
+original raw API observations. These are historical facts, not a fresh assessment
+of Google resources.
 
 ## Project components
 
@@ -53,5 +56,12 @@ See [source review](apps-script-source-review.md) and the
 The user attributes the original sidebar to their brother and subsequent website
 development/direct submission to themselves. This is important historical
 context, not a reason to discard the older interface or infer specific function
-authorship. Ownership/stewardship, the sidebar destination, live runtime health,
-the manifest/access difference and the second deployment remain review questions.
+authorship. No active application development is planned.
+
+Publishing boundaries, controlled source synchronization and scoped Sheets access
+are [deferred requirements](development-workflow.md) with separate activation
+conditions. Submission-handler questions belong to the
+[maintenance observations](apps-script-source-review.md), not an instruction to
+fix code or configure integrations now. No spreadsheet structure or cell data
+has been inspected through the onboarding connection; actual tab existence and
+schemas remain unverified.
