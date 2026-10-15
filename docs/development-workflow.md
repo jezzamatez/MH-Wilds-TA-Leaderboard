@@ -123,8 +123,9 @@ established here.
 source facts and unverified runtime risks. They are not integration requirements
 or confirmed outages, and no maintenance implementation is currently scheduled.
 Revisit relevant observations only when an approved task depends on that behaviour
-or new evidence warrants a targeted investigation. Project registration remains
-unstarted and does not grant access, execution or production approval.
+or new evidence warrants a targeted investigation. EmergentWorks registration is
+complete; see the [registration and orientation guidance](../README.md#emergentworks-registration).
+Registration grants no inspection, modification, execution or deployment permission.
 
 References: [Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site),
 [Apps Script source replacement](https://developers.google.com/apps-script/api/reference/rest/v1/projects/updateContent),
