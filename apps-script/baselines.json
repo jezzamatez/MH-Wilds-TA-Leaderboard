@@ -1,0 +1,49 @@
+{
+    "purpose":  "Source provenance only; not permission, registration or deployment configuration.",
+    "retrievedAtUtc":  "2026-10-14T22:52:28.4169940Z",
+    "scriptProjectId":  "1I8OOMVV2VU6cjnzpKJDL8Vw_Qfrc6ZmdObdochBAIy-TwQXVekigbL4L",
+    "websiteDeploymentId":  "AKfycbws8Ia_eSpxe7KsAhGF6wmRSkkM6vqy2oy8JYiyfAOx-MMqLgZ6miybhILnXmUiHlrDVQ",
+    "importedFromCompanionCommit":  "752cc2ae6e9097a5de50bd25ef0663f2119a1658",
+    "editorHead":  {
+                       "kind":  "editor-head-at-retrieval"
+                   },
+    "deployedVersion3":  {
+                             "versionNumber":  3
+                         },
+    "privateEvidence":  "Original snapshots retained outside this repository in the temporary migration backup.",
+    "workingCopy":  {
+                        "sourceDirectory":  "src",
+                        "initialBaseline":  "editorHead",
+                        "behaviorChanges":  false
+                    },
+    "files":  [
+                  {
+                      "name":  "Code.gs",
+                      "editorHeadSha256":  "19B15ECC5D0531BE23DDF9C5F74BD321A5D96E4C86D5D76FCBD744CEB6A8B538",
+                      "deployedVersion3Sha256":  "19B15ECC5D0531BE23DDF9C5F74BD321A5D96E4C86D5D76FCBD744CEB6A8B538",
+                      "workingCopySha256":  "19B15ECC5D0531BE23DDF9C5F74BD321A5D96E4C86D5D76FCBD744CEB6A8B538",
+                      "editorEqualsDeployed":  true
+                  },
+                  {
+                      "name":  "funcs.gs",
+                      "editorHeadSha256":  "C39BCF041AE37803412E939D08E2429506D460828EB719D1590E77D0994B5CB8",
+                      "deployedVersion3Sha256":  "C39BCF041AE37803412E939D08E2429506D460828EB719D1590E77D0994B5CB8",
+                      "workingCopySha256":  "C39BCF041AE37803412E939D08E2429506D460828EB719D1590E77D0994B5CB8",
+                      "editorEqualsDeployed":  true
+                  },
+                  {
+                      "name":  "uform.html",
+                      "editorHeadSha256":  "E997B1D3F354CDE5DF16F5E9F8DA1220E5850F0BDADF1469653753D0D6180C56",
+                      "deployedVersion3Sha256":  "E997B1D3F354CDE5DF16F5E9F8DA1220E5850F0BDADF1469653753D0D6180C56",
+                      "workingCopySha256":  "E997B1D3F354CDE5DF16F5E9F8DA1220E5850F0BDADF1469653753D0D6180C56",
+                      "editorEqualsDeployed":  true
+                  },
+                  {
+                      "name":  "appsscript.json",
+                      "editorHeadSha256":  "729A4C61BC65411F221C76CE80D368E477374CD3670F8F95CAD5E9FC990EC5F0",
+                      "deployedVersion3Sha256":  "988B476F96343D1846826A2E2F665DB59EDFDD57AA488F92A36F6B1A20F33946",
+                      "workingCopySha256":  "729A4C61BC65411F221C76CE80D368E477374CD3670F8F95CAD5E9FC990EC5F0",
+                      "editorEqualsDeployed":  false
+                  }
+              ]
+}

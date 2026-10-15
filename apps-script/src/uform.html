@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+      body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1a1a1a; 
+        color: #f0f0f0;
+        padding: 10px;
+      }
+      .card {
+        background-color: #242424;
+        border: 1px solid #3d3d3d;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        padding: 20px;
+      }
+      .section-header {
+        border-bottom: 2px solid #0d6efd;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        font-weight: 700;
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .form-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #aaa;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+        display: block;      /* Ensures centering works */
+        text-align: center;  /* Centers all labels */
+        width: 100%;
+      }
+      .form-control {
+        background-color: #2f2f2f;
+        border: 1px solid #444;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      .form-control:focus {
+        background-color: #383838;
+        border-color: #0d6efd;
+        color: #fff;
+        box-shadow: none;
+      }
+      /* Centering text inside specific inputs */
+      .text-center-input {
+        text-align: center;
+      }
+      .btn-primary {
+        background-color: #0d6efd;
+        border: none;
+        font-weight: 700;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      .btn-primary:hover {
+        background-color: #0b5ed7;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="card" id="userform">
+      <div class="section-header">🏆 SUBMIT RUN 🏆</div>
+      
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="playerList" class="form-label">Player Name</label>
+          <input class="form-control" list="playerListOptions" id="playerList" placeholder="Select player...">
+          <datalist id="playerListOptions"></datalist>
+        </div>
+
+        <div class="col-6">
+          <label for="runTypeList" class="form-label">Category</label>
+          <input class="form-control text-center-input" list="runTypeListOptions" id="runTypeList" placeholder="TA/FS">
+          <datalist id="runTypeListOptions"></datalist>
+        </div>
+
+        <div class="col-6">
+          <label for="difficultyList" class="form-label">Difficulty</label>
+          <input class="form-control text-center-input" list="difficultylistOptions" id="difficultyList" placeholder="Stars">
+          <datalist id="difficultylistOptions"></datalist>
+        </div>
+
+        <div class="col-12">
+          <label for="monsterList" class="form-label">Target Monster</label>
+          <input class="form-control" list="monsterListOptions" id="monsterList" placeholder="Search target...">
+          <datalist id="monsterListOptions"></datalist>
+        </div>
+
+        <div class="col-12">
+          <label for="weaponList" class="form-label">Weapon</label>
+          <input class="form-control" list="weaponListOptions" id="weaponList" placeholder="Search weapon...">
+          <datalist id="weaponListOptions"></datalist>
+        </div>
+
+        <div class="col-12">
+          <label for="dMM" class="form-label">Clear Time</label>
+          <input type="text" class="form-control text-center-input" id="dMM" placeholder="00:00.00">
+        </div>
+
+        <div class="col-12">
+          <label for="YouTubeLink" class="form-label">Video Link</label>
+          <input type="url" class="form-control" id="YouTubeLink" placeholder="YouTube URL">
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100" id="mainButton">SUBMIT RUN</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function afterSidebarLoads() {
+        google.script.run
+          .withSuccessHandler(populateAllLists)
+          .getDropdownData();
+      }
+
+      function populateAllLists(data) {
+        const listMap = {
+          players: "playerListOptions",
+          runTypes: "runTypeListOptions",
+          monsters: "monsterListOptions",
+          weapons: "weaponListOptions",
+          difficulty: "difficultylistOptions"
+        };
+
+        Object.keys(listMap).forEach(key => {
+          const datalist = document.getElementById(listMap[key]);
+          if (datalist && data[key]) {
+            datalist.innerHTML = ""; 
+            data[key].forEach(value => {
+              const option = document.createElement("option");
+              option.value = value;
+              datalist.appendChild(option);
+            });
+          }
+        });
+      }
+
+      function afterButtonClicked() {
+        var rowData = {
+          Player: document.getElementById("playerList").value,
+          RunType: document.getElementById("runTypeList").value,
+          Monster: document.getElementById("monsterList").value,
+          Weapon: document.getElementById("weaponList").value,
+          Difficulty: document.getElementById("difficultyList").value,
+          Duration: document.getElementById("dMM").value,
+          Link: document.getElementById("YouTubeLink").value
+        };
+
+        const btn = document.getElementById("mainButton");
+        btn.disabled = true;
+        btn.textContent = "SUBMITTING...";
+
+        google.script.run
+          .withSuccessHandler(function() {
+            btn.disabled = false;
+            btn.textContent = "SUBMIT RUN";
+            alert("Success!");
+            document.querySelectorAll('input').forEach(i => i.value = "");
+          })
+          .addNewRow(rowData);
+      }
+
+      document.getElementById("mainButton").addEventListener("click", afterButtonClicked);
+      document.addEventListener("DOMContentLoaded", afterSidebarLoads);
+    </script>
+  </body>
+</html>
